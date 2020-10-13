@@ -33,7 +33,7 @@ class BJ_Hand(cards.Hand):
         rep = self.name + ':\t' + super().__str__()
         if self.total:
             rep += '(' + str(self.total) + ')'
-        return rep    
+        return rep
 
     @property
     def total(self):
@@ -77,13 +77,13 @@ class BJ_Player(BJ_Hand):
 
     def lose(self):
         print(f'{self.name} loses')
-        
+
     def win(self):
         print(f'{self.name} wins!')
 
     def push(self):
         print(f'{self.name} pushes!')
-  
+
 
 class BJ_Dealer(BJ_Hand):
     '''A Blackjack dealer'''
@@ -116,7 +116,7 @@ class BJ_Game():
     def still_playing(self):
         sp = []
         for player in self.players:
-            if not player.is_busted() or not player.out_of_money():
+            if not player.is_busted():
                 sp.append(player)
         return sp
 
